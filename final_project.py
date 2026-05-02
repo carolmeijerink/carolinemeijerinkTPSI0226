@@ -22,9 +22,12 @@ class Reserva:
         print(f"Data de checkout: {self.data_checkout}")
         
         print("-" * 20)
-    
+
+base_de_dados_reservas = []
+print ("\nBem-vindo ao Hotel XPTO!")
+
 while 1==1:   
-    print ("\nBem-vindo ao Hotel XPTO! Por favor, preencha seus dados para realizar a reserva:\n")
+    print ("\nPor favor, preencha seus dados para realizar a reserva:\n")
     nome_completo = input("Nome completo: ")
     nif = input("NIF: ")
     email = input("E-mail: ")
@@ -32,7 +35,9 @@ while 1==1:
     data_checkout = input("Data de checkout (dd/mm/aaaa): ")
 
     nova_reserva = Reserva(nome_completo, nif, email, data_checkin, data_checkout)
+    base_de_dados_reservas.append(nova_reserva)
     nova_reserva.exibir_detalhes()
+    print("\nReserva registada com sucesso!")
 
     print("\nDeseja realizar outra reserva? (S/N)")
 
@@ -40,6 +45,8 @@ while 1==1:
     if resposta != "S":
         break
 
-        
+
+# for res in base_de_dados_reservas:
+#     res.exibir_detalhes()
         
         
