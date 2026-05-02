@@ -23,11 +23,22 @@ class Reserva:
         
         print("-" * 20)
     
-    
-r1 = Reserva("Caroline Meijerink", "12345", "carolcris444@gmail.com", "2026-08-01", "2026-08-10")
+while 1==1:   
+    print ("\nBem-vindo ao Hotel XPTO! Por favor, preencha seus dados para realizar a reserva:\n")
+    nome_completo = input("Nome completo: ")
+    nif = input("NIF: ")
+    email = input("E-mail: ")
+    data_checkin = input("Data de checkin (dd/mm/aaaa): ")
+    data_checkout = input("Data de checkout (dd/mm/aaaa): ")
 
-r1.exibir_detalhes()
-    
+    nova_reserva = Reserva(nome_completo, nif, email, data_checkin, data_checkout)
+    nova_reserva.exibir_detalhes()
+
+    print("\nDeseja realizar outra reserva? (S/N)")
+
+    resposta = input().upper()
+    if resposta != "S":
+        break
 
         
         
