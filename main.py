@@ -2,8 +2,11 @@
 from reserva import Reserva
 from validacoes import validar_email, validar_data, validar_nif
 from datetime import datetime
+from persistencia import guardar_reservas, carregar_reservas
 
 base_de_dados_reservas = []
+base_de_dados_reservas = carregar_reservas()
+
 print ("\nBem-vindo ao Hotel XPTO!")
 
 while True:   
@@ -60,5 +63,10 @@ while True:
 
 # for res in base_de_dados_reservas:
 #     res.exibir_detalhes()
-        
+
+print("\nDeseja guardar as reservas em um ficheiro antes de sair? (S/N)")
+if(input().upper() == "S"):
+    guardar_reservas(base_de_dados_reservas)
+
+print("\nObrigado por usar o Hotel XPTO! Até breve!")
         
