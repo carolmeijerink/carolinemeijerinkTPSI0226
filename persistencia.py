@@ -1,6 +1,8 @@
 import json
 import os #interação com o sistema operativo
+
 from reserva import Reserva
+
 
 nome_ficheiro = "reservas.json"
 

@@ -1,10 +1,26 @@
 [
     {
         "id": 1,
-        "nome_completo": "Carol Meijerink",
+        "nome_completo": "Teste1",
         "nif": "111111111",
-        "email": "carolcris444@gmail.com",
-        "data_checkin": "16/09/2026",
-        "data_checkout": "20/09/2026"
+        "email": "teste@gmail.com",
+        "data_checkin": "19/05/2026",
+        "data_checkout": "20/05/2026"
+    },
+    {
+        "id": 2,
+        "nome_completo": "Teste2",
+        "nif": "222222222",
+        "email": "teste2@sapo.pt",
+        "data_checkin": "19/05/2026",
+        "data_checkout": "20/05/2026"
+    },
+    {
+        "id": 3,
+        "nome_completo": "Teste3",
+        "nif": "333333333",
+        "email": "teste3@adv.oa.pt",
+        "data_checkin": "20/09/2026",
+        "data_checkout": "25/09/2026"
     }
 ]
