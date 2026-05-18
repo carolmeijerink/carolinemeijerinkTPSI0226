@@ -18,6 +18,7 @@ def guardar_reservas(lista_reservas):
 def carregar_reservas():
     if not os.path.exists(nome_ficheiro):
         print("Nenhum ficheiro de reservas encontrado. Iniciando com uma lista vazia.")
+        Reserva.contador_id = 1
         return []
     
     try:

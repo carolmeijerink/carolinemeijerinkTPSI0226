@@ -2,17 +2,9 @@
     {
         "id": 1,
         "nome_completo": "Carol Meijerink",
-        "nif": "222222222",
+        "nif": "111111111",
         "email": "carolcris444@gmail.com",
         "data_checkin": "16/09/2026",
         "data_checkout": "20/09/2026"
-    },
-    {
-        "id": 2,
-        "nome_completo": "Carol",
-        "nif": "123456789",
-        "email": "carolcris444@gmail.com",
-        "data_checkin": "19/08/2026",
-        "data_checkout": "20/08/2026"
     }
 ]

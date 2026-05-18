@@ -49,3 +49,67 @@ def calcular_estatisticas(lista):
     
     total_reservas = len(lista)
     print(f"\nTotal de reservas: {total_reservas}")
+
+
+def eliminar_reserva(lista, id_procurado):
+    for res in lista:
+        if res.id == id_procurado:
+            print(f"Reserva encontrada: ID {res.id} | Nome: {res.nome_completo}")
+            confirmacao = input("Tem certeza que deseja eliminar esta reserva? (S/N): ").upper()
+            if confirmacao == 'S':
+                lista.remove(res)
+                print("Reserva eliminada com sucesso.")
+                return True
+            else:
+                print("Eliminação cancelada pelo utilizador.")
+                return False
+    print("A reserva com o ID especificado não foi encontrada.")
+
+def editar_reserva(lista, id_procurado, func_validar_nif, func_validar_email):
+    for res in lista:
+        if res.id == id_procurado:
+            print("\n--- DADOS ATUAIS DA RESERVA ---")
+            print(f"1. Nome: {res.nome_completo}")
+            print(f"2. NIF: {res.nif}")
+            print(f"3. E-mail: {res.email}")
+            print(f"4. Cancelar edição")
+
+            opcao = input("\nO que deseja alterar? (1-4): ")
+
+            if opcao == "1":
+                novo_nome = input("Novo Nome Completo: ")
+                if novo_nome.strip():
+                    res.nome_completo = novo_nome
+                    print("Nome atualizado com sucesso!")
+                    return True
+            
+            elif opcao == "2":
+                while True:
+                    novo_nif = input("Novo NIF: ")
+                    if func_validar_nif(novo_nif):
+                        res.nif = novo_nif
+                        print("NIF atualizado com sucesso!")
+                        return True
+                        
+            
+            elif opcao == "3":
+                while True:
+                    novo_email = input("Novo E-mail: ")
+                    if func_validar_email(novo_email):
+                        res.email = novo_email
+                        print("E-mail atualizado com sucesso!")
+                        return True
+                        
+            
+            elif opcao == "4":
+                print("Edição cancelada.")
+                return False
+            else:
+                print("Opção inválida.")
+            return False
+    
+    print("Reserva não encontrada.")
+    return False
+
+
+

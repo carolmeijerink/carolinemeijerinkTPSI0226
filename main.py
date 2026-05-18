@@ -15,7 +15,9 @@ def menu ():
         print("4. Pesquisar reserva por ID")
         print("5. Ordenar por ID")
         print("6. Estatísticas de reservas")
-        print("7. Sair")
+        print("7. Editar uma reserva")
+        print("8. Eliminar uma reserva")
+        print("9. Sair")
 
         escolha = input("Escolha uma opção: ")
 
@@ -113,7 +115,29 @@ def menu ():
         elif escolha == "6":
             gestao.calcular_estatisticas(base_de_dados_reservas)
 
+
         elif escolha == "7":
+            print("\n--- EDITAR UMA RESERVA ---")
+            try:
+                id_procurado = int(input("Digite o ID da reserva que deseja editar: "))                
+                alterado = gestao.editar_reserva(base_de_dados_reservas, id_procurado, validar_nif, validar_email)
+                if alterado:
+                    guardar_reservas(base_de_dados_reservas)
+            except ValueError:
+                print("ID inválido. Por favor, insira um número inteiro.")
+
+        elif escolha == "8":
+            print("\n--- ELIMINAR UMA RESERVA ---")
+            try:
+                id_procurado = int(input("Digite o ID da reserva que deseja eliminar: "))
+                eliminado = gestao.eliminar_reserva(base_de_dados_reservas, id_procurado)
+                if eliminado:
+                    guardar_reservas(base_de_dados_reservas)
+            except ValueError:
+                print("ID inválido. Por favor, insira um número inteiro.")
+        
+
+        elif escolha == "9":
             print("\nObrigado por usar o Hotel XPTO! Até breve!")
             break
         
